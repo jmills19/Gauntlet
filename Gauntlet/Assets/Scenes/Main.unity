@@ -121,13 +121,19 @@ NavMeshSettings:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 --- !u!1 &570115221
 =======
+=======
+>>>>>>> Stashed changes
 <<<<<<< HEAD
 --- !u!1 &13649848
 =======
 --- !u!1 &570115221
 >>>>>>> 6fe28bc7870f25c3a3024aebf7756cdc78da01d2
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 GameObject:
   m_ObjectHideFlags: 0
@@ -137,13 +143,19 @@ GameObject:
   serializedVersion: 6
   m_Component:
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 =======
+=======
+>>>>>>> Stashed changes
 <<<<<<< HEAD
   - component: {fileID: 13649849}
   - component: {fileID: 13649851}
   - component: {fileID: 13649850}
   m_Layer: 0
   m_Name: hand
+=======
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
   - component: {fileID: 570115225}
@@ -153,6 +165,10 @@ GameObject:
   m_Layer: 0
   m_Name: Plane
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
+=======
+>>>>>>> 6fe28bc7870f25c3a3024aebf7756cdc78da01d2
+>>>>>>> Stashed changes
 =======
 >>>>>>> 6fe28bc7870f25c3a3024aebf7756cdc78da01d2
 >>>>>>> Stashed changes
@@ -162,9 +178,12 @@ GameObject:
   m_StaticEditorFlags: 0
   m_IsActive: 1
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 --- !u!64 &570115222
 MeshCollider:
 =======
+=======
+>>>>>>> Stashed changes
 <<<<<<< HEAD
 --- !u!4 &13649849
 Transform:
@@ -410,13 +429,19 @@ GameObject:
   m_IsActive: 1
 --- !u!136 &629580410
 CapsuleCollider:
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 =======
+=======
+>>>>>>> Stashed changes
   m_GameObject: {fileID: 629580409}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
@@ -426,6 +451,9 @@ CapsuleCollider:
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &629580411
+=======
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
   m_GameObject: {fileID: 570115221}
@@ -438,6 +466,10 @@ CapsuleCollider:
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!23 &570115223
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
+=======
+>>>>>>> 6fe28bc7870f25c3a3024aebf7756cdc78da01d2
+>>>>>>> Stashed changes
 =======
 >>>>>>> 6fe28bc7870f25c3a3024aebf7756cdc78da01d2
 >>>>>>> Stashed changes
@@ -447,13 +479,19 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
   m_GameObject: {fileID: 570115221}
 =======
+=======
+>>>>>>> Stashed changes
 <<<<<<< HEAD
   m_GameObject: {fileID: 629580409}
 =======
   m_GameObject: {fileID: 570115221}
 >>>>>>> 6fe28bc7870f25c3a3024aebf7756cdc78da01d2
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
   m_Enabled: 1
   m_CastShadows: 1
@@ -466,13 +504,19 @@ MeshRenderer:
   m_RendererPriority: 0
   m_Materials:
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
   - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
 =======
+=======
+>>>>>>> Stashed changes
 <<<<<<< HEAD
   - {fileID: 2100000, guid: afc7b91216167af42a17e4f95ce4810a, type: 2}
 =======
   - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
 >>>>>>> 6fe28bc7870f25c3a3024aebf7756cdc78da01d2
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
   m_StaticBatchInfo:
     firstSubMesh: 0
@@ -494,13 +538,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 --- !u!33 &570115224
 =======
+=======
+>>>>>>> Stashed changes
 <<<<<<< HEAD
 --- !u!33 &629580412
 =======
 --- !u!33 &570115224
 >>>>>>> 6fe28bc7870f25c3a3024aebf7756cdc78da01d2
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -508,10 +558,13 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
   m_GameObject: {fileID: 570115221}
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!4 &570115225
 =======
+=======
+>>>>>>> Stashed changes
 <<<<<<< HEAD
   m_GameObject: {fileID: 629580409}
   m_Mesh: {fileID: 10208, guid: 0000000000000000e000000000000000, type: 0}
@@ -554,6 +607,9 @@ GameObject:
   m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &698477349
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 Transform:
   m_ObjectHideFlags: 0
@@ -561,7 +617,10 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 =======
+=======
+>>>>>>> Stashed changes
   m_GameObject: {fileID: 698477348}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 1.407, z: 0.71099997}
@@ -618,6 +677,9 @@ MeshFilter:
   m_GameObject: {fileID: 698477348}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
 =======
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
   m_GameObject: {fileID: 570115221}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
@@ -628,6 +690,10 @@ MeshFilter:
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
+=======
+>>>>>>> 6fe28bc7870f25c3a3024aebf7756cdc78da01d2
+>>>>>>> Stashed changes
 =======
 >>>>>>> 6fe28bc7870f25c3a3024aebf7756cdc78da01d2
 >>>>>>> Stashed changes
@@ -1351,6 +1417,7 @@ MeshFilter:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 3
+<<<<<<< Updated upstream
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 <<<<<<< Updated upstream
 --- !u!1 &1497102526
@@ -1459,5 +1526,9 @@ Transform:
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 =======
+>>>>>>> 6fe28bc7870f25c3a3024aebf7756cdc78da01d2
+>>>>>>> Stashed changes
+=======
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 >>>>>>> 6fe28bc7870f25c3a3024aebf7756cdc78da01d2
 >>>>>>> Stashed changes
