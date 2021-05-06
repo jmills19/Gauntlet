@@ -121,10 +121,26 @@ NavMeshSettings:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
 <<<<<<< HEAD
+=======
+<<<<<<< Updated upstream
+<<<<<<< Updated upstream
+--- !u!1 &570115221
+=======
+=======
+>>>>>>> Stashed changes
+>>>>>>> main
+<<<<<<< HEAD
 --- !u!1 &13649848
 =======
 --- !u!1 &570115221
 >>>>>>> 6fe28bc7870f25c3a3024aebf7756cdc78da01d2
+<<<<<<< HEAD
+=======
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
+>>>>>>> Stashed changes
+>>>>>>> main
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -133,24 +149,60 @@ GameObject:
   serializedVersion: 6
   m_Component:
 <<<<<<< HEAD
+=======
+<<<<<<< Updated upstream
+<<<<<<< Updated upstream
+=======
+=======
+>>>>>>> Stashed changes
+>>>>>>> main
+<<<<<<< HEAD
   - component: {fileID: 13649849}
   - component: {fileID: 13649851}
   - component: {fileID: 13649850}
   m_Layer: 0
   m_Name: hand
 =======
+<<<<<<< HEAD
+=======
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
+>>>>>>> Stashed changes
+>>>>>>> main
   - component: {fileID: 570115225}
   - component: {fileID: 570115224}
   - component: {fileID: 570115223}
   - component: {fileID: 570115222}
   m_Layer: 0
   m_Name: Plane
+<<<<<<< HEAD
 >>>>>>> 6fe28bc7870f25c3a3024aebf7756cdc78da01d2
+=======
+<<<<<<< Updated upstream
+<<<<<<< Updated upstream
+=======
+>>>>>>> 6fe28bc7870f25c3a3024aebf7756cdc78da01d2
+>>>>>>> Stashed changes
+=======
+>>>>>>> 6fe28bc7870f25c3a3024aebf7756cdc78da01d2
+>>>>>>> Stashed changes
+>>>>>>> main
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+<<<<<<< HEAD
+=======
+<<<<<<< Updated upstream
+<<<<<<< Updated upstream
+--- !u!64 &570115222
+MeshCollider:
+=======
+=======
+>>>>>>> Stashed changes
+>>>>>>> main
 <<<<<<< HEAD
 --- !u!4 &13649849
 Transform:
@@ -396,10 +448,25 @@ GameObject:
   m_IsActive: 1
 --- !u!136 &629580410
 CapsuleCollider:
+<<<<<<< HEAD
+=======
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
+>>>>>>> Stashed changes
+>>>>>>> main
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
+<<<<<<< HEAD
+=======
+<<<<<<< Updated upstream
+<<<<<<< Updated upstream
+=======
+=======
+>>>>>>> Stashed changes
+>>>>>>> main
   m_GameObject: {fileID: 629580409}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
@@ -410,6 +477,13 @@ CapsuleCollider:
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &629580411
 =======
+<<<<<<< HEAD
+=======
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
+>>>>>>> Stashed changes
+>>>>>>> main
   m_GameObject: {fileID: 570115221}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
@@ -419,17 +493,44 @@ CapsuleCollider:
   m_CookingOptions: 14
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!23 &570115223
+<<<<<<< HEAD
 >>>>>>> 6fe28bc7870f25c3a3024aebf7756cdc78da01d2
+=======
+<<<<<<< Updated upstream
+<<<<<<< Updated upstream
+=======
+>>>>>>> 6fe28bc7870f25c3a3024aebf7756cdc78da01d2
+>>>>>>> Stashed changes
+=======
+>>>>>>> 6fe28bc7870f25c3a3024aebf7756cdc78da01d2
+>>>>>>> Stashed changes
+>>>>>>> main
 MeshRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
 <<<<<<< HEAD
+=======
+<<<<<<< Updated upstream
+<<<<<<< Updated upstream
+  m_GameObject: {fileID: 570115221}
+=======
+=======
+>>>>>>> Stashed changes
+>>>>>>> main
+<<<<<<< HEAD
   m_GameObject: {fileID: 629580409}
 =======
   m_GameObject: {fileID: 570115221}
 >>>>>>> 6fe28bc7870f25c3a3024aebf7756cdc78da01d2
+<<<<<<< HEAD
+=======
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
+>>>>>>> Stashed changes
+>>>>>>> main
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -441,10 +542,26 @@ MeshRenderer:
   m_RendererPriority: 0
   m_Materials:
 <<<<<<< HEAD
+=======
+<<<<<<< Updated upstream
+<<<<<<< Updated upstream
+  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+=======
+=======
+>>>>>>> Stashed changes
+>>>>>>> main
+<<<<<<< HEAD
   - {fileID: 2100000, guid: afc7b91216167af42a17e4f95ce4810a, type: 2}
 =======
   - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
 >>>>>>> 6fe28bc7870f25c3a3024aebf7756cdc78da01d2
+<<<<<<< HEAD
+=======
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
+>>>>>>> Stashed changes
+>>>>>>> main
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -465,15 +582,42 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
 <<<<<<< HEAD
+=======
+<<<<<<< Updated upstream
+<<<<<<< Updated upstream
+--- !u!33 &570115224
+=======
+=======
+>>>>>>> Stashed changes
+>>>>>>> main
+<<<<<<< HEAD
 --- !u!33 &629580412
 =======
 --- !u!33 &570115224
 >>>>>>> 6fe28bc7870f25c3a3024aebf7756cdc78da01d2
+<<<<<<< HEAD
+=======
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
+>>>>>>> Stashed changes
+>>>>>>> main
 MeshFilter:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
+<<<<<<< HEAD
+=======
+<<<<<<< Updated upstream
+<<<<<<< Updated upstream
+  m_GameObject: {fileID: 570115221}
+  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!4 &570115225
+=======
+=======
+>>>>>>> Stashed changes
+>>>>>>> main
 <<<<<<< HEAD
   m_GameObject: {fileID: 629580409}
   m_Mesh: {fileID: 10208, guid: 0000000000000000e000000000000000, type: 0}
@@ -516,11 +660,26 @@ GameObject:
   m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &698477349
+<<<<<<< HEAD
+=======
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
+>>>>>>> Stashed changes
+>>>>>>> main
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
+<<<<<<< HEAD
+=======
+<<<<<<< Updated upstream
+<<<<<<< Updated upstream
+=======
+=======
+>>>>>>> Stashed changes
+>>>>>>> main
   m_GameObject: {fileID: 698477348}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 1.407, z: 0.71099997}
@@ -577,6 +736,13 @@ MeshFilter:
   m_GameObject: {fileID: 698477348}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
 =======
+<<<<<<< HEAD
+=======
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
+>>>>>>> Stashed changes
+>>>>>>> main
   m_GameObject: {fileID: 570115221}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
@@ -585,7 +751,18 @@ MeshFilter:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+<<<<<<< HEAD
 >>>>>>> 6fe28bc7870f25c3a3024aebf7756cdc78da01d2
+=======
+<<<<<<< Updated upstream
+<<<<<<< Updated upstream
+=======
+>>>>>>> 6fe28bc7870f25c3a3024aebf7756cdc78da01d2
+>>>>>>> Stashed changes
+=======
+>>>>>>> 6fe28bc7870f25c3a3024aebf7756cdc78da01d2
+>>>>>>> Stashed changes
+>>>>>>> main
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
@@ -1306,5 +1483,123 @@ MeshFilter:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 3
+<<<<<<< HEAD
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 >>>>>>> 6fe28bc7870f25c3a3024aebf7756cdc78da01d2
+=======
+<<<<<<< Updated upstream
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+<<<<<<< Updated upstream
+--- !u!1 &1497102526
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1497102531}
+  - component: {fileID: 1497102530}
+  - component: {fileID: 1497102529}
+  - component: {fileID: 1497102528}
+  - component: {fileID: 1497102527}
+  m_Layer: 0
+  m_Name: Capsule
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1497102527
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1497102526}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2300e33005b20d84a8cc2bdae276b925, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!136 &1497102528
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1497102526}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.5
+  m_Height: 2
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!23 &1497102529
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1497102526}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+--- !u!33 &1497102530
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1497102526}
+  m_Mesh: {fileID: 10208, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!4 &1497102531
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1497102526}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 1.44, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+=======
+>>>>>>> 6fe28bc7870f25c3a3024aebf7756cdc78da01d2
+>>>>>>> Stashed changes
+=======
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+>>>>>>> 6fe28bc7870f25c3a3024aebf7756cdc78da01d2
+>>>>>>> Stashed changes
+>>>>>>> main
