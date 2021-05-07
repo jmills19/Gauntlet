@@ -8,12 +8,13 @@ public class DemonEnemy : MonoBehaviour
     public int speed = 5;
     public int Hp = 5;
 
+    public Transform fireballPos;
     public GameObject player;
     public GameObject fireball;
     public float _fireDeathTimer;
     public float timeBetweenShots;
     public float startDelay;
-    public bool shooting;
+    public bool shooting=false;
 
     Vector3 tempPos;
     Vector3 tempRot;
@@ -33,7 +34,7 @@ public class DemonEnemy : MonoBehaviour
         transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, 1 * Time.deltaTime);
         tempRot = transform.eulerAngles;
 
-        if (distance > howFar)
+        if (distance >= howFar)
         {
             transform.position += transform.forward * speed * Time.deltaTime;
             tempPos = transform.position;
@@ -43,9 +44,9 @@ public class DemonEnemy : MonoBehaviour
         {
             shooting = true;
         }
-        if (transform.position.y > 0 || transform.position.y < 0)
+        if (transform.position.y > 1 || transform.position.y < 1)
         {
-            tempPos.y = 0;
+            tempPos.y = 1;
             transform.position = tempPos;
 
         }
@@ -64,12 +65,11 @@ public class DemonEnemy : MonoBehaviour
     public void SpawnProjectile()
     //similar spawner that was in the original platformer but it can now spawn enemies
     {
+       
         if (shooting == true)
         {
-           GameObject projectile = Instantiate(fireball, transform.position, fireball.transform.rotation);
-            
-           projectile.GetComponent<fireBall>().Initialize(_fireDeathTimer);
-          
+            GameObject projectile = Instantiate(fireball, fireballPos.transform.position, this.transform.rotation); 
+            projectile.GetComponent<fireBall>().Initialize(_fireDeathTimer);
         }
     }
 }
