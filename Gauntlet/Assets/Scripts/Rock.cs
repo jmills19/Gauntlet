@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class fireBall : MonoBehaviour
+public class Rock : MonoBehaviour
 {
     public float speed;
     Rigidbody body;
@@ -27,7 +27,7 @@ public class fireBall : MonoBehaviour
     {
         transform.position += speed * transform.forward * Time.deltaTime;
         StartCoroutine(Die());
-        
+
     }
     IEnumerator Die()
     {
@@ -35,13 +35,12 @@ public class fireBall : MonoBehaviour
         yield return new WaitForSeconds(_deathTimer);
         Destroy(this.gameObject);
     }
-    private void OnCollisionEnter(Collision other)
+    private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.tag == "Player")
         {
-            
+            Destroy(this.gameObject);
             //Player's health--;
         }
-        Destroy(this.gameObject);
     }
 }
