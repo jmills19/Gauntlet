@@ -4,8 +4,10 @@ using UnityEngine;
 
 public class ThievesEnemy : MonoBehaviour
 {
+    public bool goingLeft;
+    public bool goingForward;
     public bool run;
-    public int speed = 5;
+    public int speed;
     public int Hp = 5;
     public GameObject player;
     Vector3 tempPos;
@@ -28,8 +30,26 @@ public class ThievesEnemy : MonoBehaviour
             tempRot = transform.eulerAngles;
 
             transform.position += transform.forward * speed * Time.deltaTime;
-            tempPos = transform.position;
+           
         }
+        else
+        {
+            if (Physics.Raycast(transform.position, transform.forward, 1f))
+            {
+                Debug.Log("What");
+                if (Random.Range(0, 2) == 0)
+                {
+                    
+                }
+                else
+                {
+                    
+                }
+            }
+            transform.position += transform.forward * speed * Time.deltaTime;
+        }
+
+        tempPos = transform.position;
         if (transform.position.y > 0 || transform.position.y < 0)
         {
             tempPos.y = 0;
