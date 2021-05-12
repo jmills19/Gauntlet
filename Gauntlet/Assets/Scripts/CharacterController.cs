@@ -49,6 +49,7 @@ public class CharacterController : MonoBehaviour
             transform.position += new Vector3(1, 0, 0) * pSpeed * Time.deltaTime;
         }
 
+        // Converts health value to string to be displayed.
         healthText.text = "Health: " + constantHealthDrain.ToString("f0");
 
         if(constantHealthDrain <= 0)
