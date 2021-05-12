@@ -1,19 +1,22 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using TMPro;
 
 public class CharacterController : MonoBehaviour
 {
+    public TMP_Text healthText;
+
     // "Timer" Creates a time limit for the player
-    int constantHealthDrain = 100;
+    public float constantHealthDrain = 100f;
 
     // Base character stats
-    int pHealth;
-    int pDamage;
+    public int pDamage;
     Vector3 pMove;
-    float pSpeed = 5;
+    public float pSpeed = 5f;
     enum pAttackType { melee, missile };
-    float pAttackRange;
+    public float pAttackRange;
 
     // Start is called before the first frame update
     void Start()
@@ -42,7 +45,19 @@ public class CharacterController : MonoBehaviour
         // Move to the Right
         if (Input.GetKey(KeyCode.D))
         {
+            Debug.Log("D key pressed.");
             transform.position += new Vector3(1, 0, 0) * pSpeed * Time.deltaTime;
+        }
+
+        healthText.text = "Health: " + constantHealthDrain.ToString("f0");
+
+        if(constantHealthDrain <= 0)
+        {
+            Destroy(gameObject);
+        }
+        else
+        {
+            constantHealthDrain -= Time.deltaTime;
         }
     }
 }
