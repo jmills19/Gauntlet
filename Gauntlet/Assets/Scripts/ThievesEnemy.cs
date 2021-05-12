@@ -33,17 +33,33 @@ public class ThievesEnemy : MonoBehaviour
         }
         else
         {
-            transform.position += transform.forward * speed * Time.deltaTime;
-            if (Physics.Raycast(transform.position, transform.forward, 1f))
+
+            if (Physics.Raycast(transform.position, Vector3.back, 1f))
             {
-                Debug.Log("What");
+                Debug.Log("forward");
                 if (Random.Range(0, 2) == 0)
                 {
-                    transform.Rotate(0f, 90f, 0.0f, Space.World);
+                    //transform.Rotate(new Vector3(0, -90, 0));
+                    transform.position += Vector3.right * Time.deltaTime * speed;
                 }
                 else
                 {
-                    transform.Rotate(0f, -90f, 0.0f, Space.World);
+                    //transform.Rotate(new Vector3(0, 90, 0));
+                    transform.position += Vector3.left * Time.deltaTime * speed;
+                }
+            }
+            else if(Physics.Raycast(transform.position,Vector3.forward,1f))
+            {
+                Debug.Log("back");
+                if (Random.Range(0, 2) == 0)
+                {
+                    //transform.Rotate(new Vector3(0, -90, 0));
+                    transform.position += Vector3.right * Time.deltaTime * speed;
+                }
+                else
+                {
+                    //transform.Rotate(new Vector3(0, 90, 0));
+                    transform.position += Vector3.left * Time.deltaTime * speed;
                 }
             }
             
