@@ -50,8 +50,9 @@ public class DemonEnemy : MonoBehaviour
             transform.position = tempPos;
 
         }
-        if (transform.rotation.y < 0 || transform.rotation.y > 0)
+        if (transform.rotation.x < 0 || transform.rotation.x > 0 || transform.rotation.z < 0 || transform.rotation.z > 0)
         {
+            tempRot.z = 0;
             tempRot.x = 0;
             transform.rotation = Quaternion.Euler(tempRot);
         }
