@@ -11,7 +11,6 @@ public class GhostEnemy : MonoBehaviour
     public GameObject player2;
     public GameObject player3;
     public GameObject player4;
-    float near;
     int which;
 
     Vector3 tempPos;
@@ -25,33 +24,48 @@ public class GhostEnemy : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        moveToPlayer();
+
+        if (Hp<=0)
+        {
+            Destroy(this.gameObject);
+        }
+    }
+
+    private void OnCollisionEnter(Collision other)
+    {
+        if (other.gameObject.tag == "Player")
+        {
+            Destroy(this.gameObject);
+            //Player's health--;
+        }
+    }
+
+    void moveToPlayer()
+    {
         float distance1 = Vector3.Distance(player1.transform.position, this.transform.position);
         float distance2 = Vector3.Distance(player2.transform.position, this.transform.position);
         float distance3 = Vector3.Distance(player3.transform.position, this.transform.position);
         float distance4 = Vector3.Distance(player4.transform.position, this.transform.position);
 
-        if(near>distance1)
+        if (distance1 < distance2 && distance1 < distance3 && distance1 < distance4)
         {
-            near = distance1;
             which = 1;
         }
-        else if(near>distance2)
+        else if (distance2 < distance1 && distance2 < distance3 && distance2 < distance4)
         {
-            near = distance2;
             which = 2;
         }
-        else if (near > distance3)
+        else if (distance3 < distance1 && distance3 < distance2 && distance3 < distance4)
         {
-            near = distance3;
             which = 3;
         }
-        else if (near > distance4)
+        else if (distance4 < distance1 && distance4 < distance2 && distance4 < distance3)
         {
-            near = distance4;
             which = 4;
         }
 
-        if (which== 1)
+        if (which == 1)
         {
 
             transform.LookAt(player1.transform);
@@ -59,7 +73,7 @@ public class GhostEnemy : MonoBehaviour
             transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, 1 * Time.deltaTime);
             tempRot = transform.eulerAngles;
         }
-        else if(which==2)
+        else if (which == 2)
         {
             transform.LookAt(player2.transform);
             Quaternion targetRotation = Quaternion.LookRotation(player2.transform.position - transform.position);
@@ -82,9 +96,9 @@ public class GhostEnemy : MonoBehaviour
         }
 
 
-        transform.position += transform.forward * speed* Time.deltaTime;
+        transform.position += transform.forward * speed * Time.deltaTime;
         tempPos = transform.position;
-        if (transform.position.y>0||transform.position.y<0)
+        if (transform.position.y > 0 || transform.position.y < 0)
         {
             tempPos.y = 0;
             transform.position = tempPos;
@@ -95,20 +109,6 @@ public class GhostEnemy : MonoBehaviour
             tempRot.z = 0;
             tempRot.x = 0;
             transform.rotation = Quaternion.Euler(tempRot);
-        }
-
-        if (Hp<=0)
-        {
-            Destroy(this.gameObject);
-        }
-    }
-
-    private void OnCollisionEnter(Collision other)
-    {
-        if (other.gameObject.tag == "Player")
-        {
-            Destroy(this.gameObject);
-            //Player's health--;
         }
     }
 }
