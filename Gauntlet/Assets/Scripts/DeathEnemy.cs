@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GhostEnemy : MonoBehaviour
+public class DeathEnemy : MonoBehaviour
 {
-    public int speed=5;
-    public int Hp = 5;
+    public int speed = 5;
+    public int totalDamage=0;
 
     public GameObject player1;
     public GameObject player2;
@@ -18,29 +18,30 @@ public class GhostEnemy : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
     }
 
     // Update is called once per frame
     void Update()
     {
+
         moveToPlayer();
 
-        if (Hp<=0)
+        if (totalDamage >=200)
         {
             Destroy(this.gameObject);
         }
     }
 
+
+    //private void OnTriggerEnter(Collider other)
     private void OnCollisionEnter(Collision other)
     {
         if (other.gameObject.tag == "Player")
         {
-            Destroy(this.gameObject);
-            //Player's health--;
+            totalDamage+=5;
+            //Player's health= player's health-totalDamage;
         }
     }
-
     void moveToPlayer()
     {
         float distance1 = Vector3.Distance(player1.transform.position, this.transform.position);

@@ -15,9 +15,7 @@ public class fireBall : MonoBehaviour
     // Start is called before the first frame update
     void start()
     {
-        transform.LookAt(GameObject.FindGameObjectWithTag("Player").transform);
-        Quaternion targetRotation = Quaternion.LookRotation(player.transform.position - transform.position);
-        transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, 1 * Time.deltaTime);
+    
 
 
     }

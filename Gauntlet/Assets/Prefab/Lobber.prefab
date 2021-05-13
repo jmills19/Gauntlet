@@ -320,7 +320,10 @@ MonoBehaviour:
   speed: 5
   Hp: 5
   RockPos: {fileID: 6626130761694406969}
-  player: {fileID: 0}
+  player1: {fileID: 0}
+  player2: {fileID: 0}
+  player3: {fileID: 0}
+  player4: {fileID: 0}
   Rock: {fileID: 4587923743425405355, guid: f27d112314b82e348a3079fb00149bf5, type: 3}
   _fireDeathTimer: 10
   timeBetweenShots: 1
