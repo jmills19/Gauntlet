@@ -5,7 +5,7 @@ using UnityEngine;
 public class CharacterController : MonoBehaviour
 {
     // "Timer" Creates a time limit for the player
-    int constantHealthDrain = 100;
+    public int constantHealthDrain = 100;
 
     // Base character stats
     int pHealth;
@@ -42,7 +42,13 @@ public class CharacterController : MonoBehaviour
         // Move to the Right
         if (Input.GetKey(KeyCode.D))
         {
+            Debug.Log("D was pressed.");
             transform.position += new Vector3(1, 0, 0) * pSpeed * Time.deltaTime;
+        }
+
+        if (constantHealthDrain > 0)
+        {
+            constantHealthDrain--;
         }
     }
 }
