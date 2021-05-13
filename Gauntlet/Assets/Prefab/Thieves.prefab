@@ -410,6 +410,7 @@ GameObject:
   - component: {fileID: 6690063505084705914}
   - component: {fileID: 6690063505084705917}
   - component: {fileID: 6553904427082590848}
+  - component: {fileID: 7569630397164049563}
   m_Layer: 0
   m_Name: Thieves
   m_TagString: Untagged
@@ -452,7 +453,11 @@ MonoBehaviour:
   run: 0
   speed: 20
   Hp: 5
-  player: {fileID: 0}
+  player1: {fileID: 0}
+  player2: {fileID: 0}
+  player3: {fileID: 0}
+  player4: {fileID: 0}
+  direction: 
 --- !u!54 &6553904427082590848
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -469,6 +474,19 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 36
   m_CollisionDetection: 0
+--- !u!65 &7569630397164049563
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6690063505084705915}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.25, y: 2.72, z: 2}
+  m_Center: {x: 0, y: 1.36, z: 0.21}
 --- !u!1 &6690063505099851456
 GameObject:
   m_ObjectHideFlags: 0

@@ -530,7 +530,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 5
   Hp: 5
-  player: {fileID: 0}
+  player1: {fileID: 0}
+  player2: {fileID: 0}
+  player3: {fileID: 0}
+  player4: {fileID: 0}
 --- !u!54 &5250564726727281070
 Rigidbody:
   m_ObjectHideFlags: 0

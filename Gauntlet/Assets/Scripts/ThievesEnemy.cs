@@ -8,12 +8,21 @@ public class ThievesEnemy : MonoBehaviour
     public bool run;
     public int speed;
     public int Hp = 5;
-    public GameObject player;
+
+    public GameObject player1;
+    public GameObject player2;
+    public GameObject player3;
+    public GameObject player4;
+    int which;
+
     Vector3 tempPos;
     Vector3 tempRot;
+
+    public string direction;
     // Start is called before the first frame update
     void Start()
     {
+        direction = "back";
         run = false;
     }
 
@@ -23,30 +32,62 @@ public class ThievesEnemy : MonoBehaviour
 
         if (run == false)
         {
-            transform.LookAt(GameObject.FindGameObjectWithTag("Player").transform);
-            Quaternion targetRotation = Quaternion.LookRotation(player.transform.position - transform.position);
-            transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, 1 * Time.deltaTime);
-            
+            float distance1 = Vector3.Distance(player1.transform.position, this.transform.position);
+            float distance2 = Vector3.Distance(player2.transform.position, this.transform.position);
+            float distance3 = Vector3.Distance(player3.transform.position, this.transform.position);
+            float distance4 = Vector3.Distance(player4.transform.position, this.transform.position);
 
-            transform.position += transform.forward * speed * Time.deltaTime;
-           
+            if (distance1 < distance2 && distance1 < distance3 && distance1 < distance4)
+            {
+                which = 1;
+            }
+            else if (distance2 < distance1 && distance2 < distance3 && distance2 < distance4)
+            {
+                which = 2;
+            }
+            else if (distance3 < distance1 && distance3 < distance2 && distance3 < distance4)
+            {
+                which = 3;
+            }
+            else if (distance4 < distance1 && distance4 < distance2 && distance4 < distance3)
+            {
+                which = 4;
+            }
+
+            if (which == 1)
+            {
+
+                transform.LookAt(player1.transform);
+                Quaternion targetRotation = Quaternion.LookRotation(player1.transform.position - transform.position);
+                transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, 1 * Time.deltaTime);
+                transform.position += transform.forward * speed * Time.deltaTime;
+            }
+            else if (which == 2)
+            {
+                transform.LookAt(player2.transform);
+                Quaternion targetRotation = Quaternion.LookRotation(player2.transform.position - transform.position);
+                transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, 1 * Time.deltaTime);
+                transform.position += transform.forward * speed * Time.deltaTime;
+            }
+            else if (which == 3)
+            {
+                transform.LookAt(player3.transform);
+                Quaternion targetRotation = Quaternion.LookRotation(player3.transform.position - transform.position);
+                transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, 1 * Time.deltaTime);
+                transform.position += transform.forward * speed * Time.deltaTime;
+            }
+            else if (which == 4)
+            {
+                transform.LookAt(player4.transform);
+                Quaternion targetRotation = Quaternion.LookRotation(player4.transform.position - transform.position);
+                transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, 1 * Time.deltaTime);
+                transform.position += transform.forward * speed * Time.deltaTime;
+
+            }       
         }
         else
         {
-            transform.position += transform.forward * speed * Time.deltaTime;
-            if (Physics.Raycast(transform.position, transform.forward, 1f))
-            {
-                Debug.Log("What");
-                if (Random.Range(0, 2) == 0)
-                {
-                    transform.Rotate(0f, 90f, 0.0f, Space.World);
-                }
-                else
-                {
-                    transform.Rotate(0f, -90f, 0.0f, Space.World);
-                }
-            }
-            
+            runaway();
         }
         tempRot = transform.eulerAngles;
         tempPos = transform.position;
@@ -75,6 +116,76 @@ public class ThievesEnemy : MonoBehaviour
         {
             //Player's health--;
             run = true;
+        }
+    }
+
+    void runaway()
+    {
+
+        if (direction == "back")
+        {
+            transform.position += Vector3.back * Time.deltaTime * speed;
+            transform.eulerAngles = new Vector3(0, 180, 0);
+        }
+        if (direction == "forward")
+        {
+            transform.position += Vector3.forward * Time.deltaTime * speed;
+            transform.eulerAngles = new Vector3(0, 0, 0);
+        }
+        if (direction == "left")
+        {
+            transform.position += Vector3.left * Time.deltaTime * speed;
+            transform.eulerAngles = new Vector3(0, -90, 0);
+        }
+        if (direction == "right")
+        {
+            transform.position += Vector3.right * Time.deltaTime * speed;
+            transform.eulerAngles = new Vector3(0, 90, 0);
+        }
+
+        if (direction == "back" && Physics.Raycast(transform.position, Vector3.back, 1.5f))
+        {
+            if (Random.Range(0, 2) == 0)
+            {
+                direction = "left";
+            }
+            else
+            {
+                direction = "right";
+            }
+        }
+        else if (direction == "forward" && Physics.Raycast(transform.position, Vector3.forward, 1.5f))
+        {
+            if (Random.Range(0, 2) == 0)
+            {
+                direction = "left";
+            }
+            else
+            {
+                direction = "right";
+            }
+        }
+        else if (direction == "left" && Physics.Raycast(transform.position, Vector3.left, 1.5f))
+        {
+            if (Random.Range(0, 2) == 0)
+            {
+                direction = "forward";
+            }
+            else
+            {
+                direction = "back";
+            }
+        }
+        else if (direction == "right" && Physics.Raycast(transform.position, Vector3.right, 1.5f))
+        {
+            if (Random.Range(0, 2) == 0)
+            {
+                direction = "forward";
+            }
+            else
+            {
+                direction = "back";
+            }
         }
     }
 }
