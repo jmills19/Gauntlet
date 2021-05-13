@@ -391,7 +391,7 @@ MonoBehaviour:
   speed: 5
   Hp: 5
   fireballPos: {fileID: 2528642037334440197}
-  player: {fileID: 1192330962314147376, guid: cca7c73d2527c5e4683c8b2145666d12, type: 3}
+  player: {fileID: 6382020644527231421, guid: 2b00dbd117bb14842a4a29d650e22507, type: 3}
   fireball: {fileID: 6844093650654092981, guid: 2c82eab7c672b3b4a8969464421f3a59,
     type: 3}
   _fireDeathTimer: 2

@@ -210,7 +210,7 @@ MonoBehaviour:
   invisible: 0
   speed: 5
   Hp: 5
-  player: {fileID: 0}
+  player: {fileID: 6382020644527231421, guid: 2b00dbd117bb14842a4a29d650e22507, type: 3}
   timeBetween: 2
   startDelay: 0
 --- !u!65 &1567687590143316102

@@ -672,7 +672,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 5
   Hp: 5
-  player: {fileID: 0}
+  player: {fileID: 6382020644527231421, guid: 2b00dbd117bb14842a4a29d650e22507, type: 3}
 --- !u!65 &4392285918371268091
 BoxCollider:
   m_ObjectHideFlags: 0

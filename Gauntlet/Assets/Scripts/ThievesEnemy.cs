@@ -11,9 +11,12 @@ public class ThievesEnemy : MonoBehaviour
     public GameObject player;
     Vector3 tempPos;
     Vector3 tempRot;
+
+    public string direction;
     // Start is called before the first frame update
     void Start()
     {
+        direction = "back";
         run = false;
     }
 
@@ -33,36 +36,7 @@ public class ThievesEnemy : MonoBehaviour
         }
         else
         {
-
-            if (Physics.Raycast(transform.position, Vector3.back, 1f))
-            {
-                Debug.Log("forward");
-                if (Random.Range(0, 2) == 0)
-                {
-                    //transform.Rotate(new Vector3(0, -90, 0));
-                    transform.position += Vector3.right * Time.deltaTime * speed;
-                }
-                else
-                {
-                    //transform.Rotate(new Vector3(0, 90, 0));
-                    transform.position += Vector3.left * Time.deltaTime * speed;
-                }
-            }
-            else if(Physics.Raycast(transform.position,Vector3.forward,1f))
-            {
-                Debug.Log("back");
-                if (Random.Range(0, 2) == 0)
-                {
-                    //transform.Rotate(new Vector3(0, -90, 0));
-                    transform.position += Vector3.right * Time.deltaTime * speed;
-                }
-                else
-                {
-                    //transform.Rotate(new Vector3(0, 90, 0));
-                    transform.position += Vector3.left * Time.deltaTime * speed;
-                }
-            }
-            
+            runaway();
         }
         tempRot = transform.eulerAngles;
         tempPos = transform.position;
@@ -85,12 +59,82 @@ public class ThievesEnemy : MonoBehaviour
         }
     }
 
-    private void OnCollisionEnter(Collision other)
+     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.tag == "Player")
         {
             //Player's health--;
             run = true;
+        }
+    }
+
+    void runaway()
+    {
+
+        if (direction == "back")
+        {
+            transform.position += Vector3.back * Time.deltaTime * speed;
+            transform.eulerAngles = new Vector3(0, 180, 0);
+        }
+        if (direction == "forward")
+        {
+            transform.position += Vector3.forward * Time.deltaTime * speed;
+            transform.eulerAngles = new Vector3(0, 0, 0);
+        }
+        if (direction == "left")
+        {
+            transform.position += Vector3.left * Time.deltaTime * speed;
+            transform.eulerAngles = new Vector3(0, -90, 0);
+        }
+        if (direction == "right")
+        {
+            transform.position += Vector3.right * Time.deltaTime * speed;
+            transform.eulerAngles = new Vector3(0, 90, 0);
+        }
+
+        if (direction == "back" && Physics.Raycast(transform.position, Vector3.back, 0.8f))
+        {
+            if (Random.Range(0, 2) == 0)
+            {
+                direction = "left";
+            }
+            else
+            {
+                direction = "right";
+            }
+        }
+        else if (direction == "forward" && Physics.Raycast(transform.position, Vector3.forward, 0.8f))
+        {
+            if (Random.Range(0, 2) == 0)
+            {
+                direction = "left";
+            }
+            else
+            {
+                direction = "right";
+            }
+        }
+        else if (direction == "left" && Physics.Raycast(transform.position, Vector3.left, 0.8f))
+        {
+            if (Random.Range(0, 2) == 0)
+            {
+                direction = "forward";
+            }
+            else
+            {
+                direction = "back";
+            }
+        }
+        else if (direction == "right" && Physics.Raycast(transform.position, Vector3.right, 0.8f))
+        {
+            if (Random.Range(0, 2) == 0)
+            {
+                direction = "forward";
+            }
+            else
+            {
+                direction = "back";
+            }
         }
     }
 }
