@@ -34,7 +34,7 @@ public class DeathEnemy : MonoBehaviour
 
 
     //private void OnTriggerEnter(Collider other)
-    private void OnCollisionEnter(Collision other)
+    private void OnCollisionStay(Collision other)
     {
         if (other.gameObject.tag == "Player")
         {
