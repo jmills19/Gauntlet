@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.InputSystem;
 
 public class CharacterController : MonoBehaviour
 {
@@ -10,6 +11,7 @@ public class CharacterController : MonoBehaviour
 
     // "Timer" Creates a time limit for the player
     public float constantHealthDrain = 100f;
+    private Vector2 movementInput;
 
     // Base character stats
     public int pDamage;
@@ -21,12 +23,13 @@ public class CharacterController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        healthText = GameObject.Find("healthText").GetComponent<TMP_Text>();
     }
 
     // Update is called once per frame
     void Update()
     {
+        /*
         // Move Forward
         if (Input.GetKey(KeyCode.W))
         {
@@ -48,6 +51,9 @@ public class CharacterController : MonoBehaviour
             Debug.Log("D key pressed.");
             transform.position += new Vector3(1, 0, 0) * pSpeed * Time.deltaTime;
         }
+        */
+
+        transform.Translate(new Vector3(movementInput.x, 0, movementInput.y) * pSpeed * Time.deltaTime);
 
         healthText.text = "Health: " + constantHealthDrain.ToString("f0");
 
@@ -59,5 +65,10 @@ public class CharacterController : MonoBehaviour
         {
             constantHealthDrain -= Time.deltaTime;
         }
+    }
+
+    public void OnMove(InputAction.CallbackContext ctx)
+    {
+        movementInput = ctx.ReadValue<Vector2>();
     }
 }
