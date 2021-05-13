@@ -8,7 +8,13 @@ public class ThievesEnemy : MonoBehaviour
     public bool run;
     public int speed;
     public int Hp = 5;
-    public GameObject player;
+
+    public GameObject player1;
+    public GameObject player2;
+    public GameObject player3;
+    public GameObject player4;
+    int which;
+
     Vector3 tempPos;
     Vector3 tempRot;
 
@@ -26,13 +32,58 @@ public class ThievesEnemy : MonoBehaviour
 
         if (run == false)
         {
-            transform.LookAt(GameObject.FindGameObjectWithTag("Player").transform);
-            Quaternion targetRotation = Quaternion.LookRotation(player.transform.position - transform.position);
-            transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, 1 * Time.deltaTime);
-            
+            float distance1 = Vector3.Distance(player1.transform.position, this.transform.position);
+            float distance2 = Vector3.Distance(player2.transform.position, this.transform.position);
+            float distance3 = Vector3.Distance(player3.transform.position, this.transform.position);
+            float distance4 = Vector3.Distance(player4.transform.position, this.transform.position);
 
-            transform.position += transform.forward * speed * Time.deltaTime;
-           
+            if (distance1 < distance2 && distance1 < distance3 && distance1 < distance4)
+            {
+                which = 1;
+            }
+            else if (distance2 < distance1 && distance2 < distance3 && distance2 < distance4)
+            {
+                which = 2;
+            }
+            else if (distance3 < distance1 && distance3 < distance2 && distance3 < distance4)
+            {
+                which = 3;
+            }
+            else if (distance4 < distance1 && distance4 < distance2 && distance4 < distance3)
+            {
+                which = 4;
+            }
+
+            if (which == 1)
+            {
+
+                transform.LookAt(player1.transform);
+                Quaternion targetRotation = Quaternion.LookRotation(player1.transform.position - transform.position);
+                transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, 1 * Time.deltaTime);
+                transform.position += transform.forward * speed * Time.deltaTime;
+            }
+            else if (which == 2)
+            {
+                transform.LookAt(player2.transform);
+                Quaternion targetRotation = Quaternion.LookRotation(player2.transform.position - transform.position);
+                transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, 1 * Time.deltaTime);
+                transform.position += transform.forward * speed * Time.deltaTime;
+            }
+            else if (which == 3)
+            {
+                transform.LookAt(player3.transform);
+                Quaternion targetRotation = Quaternion.LookRotation(player3.transform.position - transform.position);
+                transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, 1 * Time.deltaTime);
+                transform.position += transform.forward * speed * Time.deltaTime;
+            }
+            else if (which == 4)
+            {
+                transform.LookAt(player4.transform);
+                Quaternion targetRotation = Quaternion.LookRotation(player4.transform.position - transform.position);
+                transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, 1 * Time.deltaTime);
+                transform.position += transform.forward * speed * Time.deltaTime;
+
+            }       
         }
         else
         {
@@ -59,7 +110,7 @@ public class ThievesEnemy : MonoBehaviour
         }
     }
 
-     private void OnTriggerEnter(Collider other)
+    private void OnCollisionEnter(Collision other)
     {
         if (other.gameObject.tag == "Player")
         {
@@ -92,7 +143,7 @@ public class ThievesEnemy : MonoBehaviour
             transform.eulerAngles = new Vector3(0, 90, 0);
         }
 
-        if (direction == "back" && Physics.Raycast(transform.position, Vector3.back, 0.8f))
+        if (direction == "back" && Physics.Raycast(transform.position, Vector3.back, 1.5f))
         {
             if (Random.Range(0, 2) == 0)
             {
@@ -103,7 +154,7 @@ public class ThievesEnemy : MonoBehaviour
                 direction = "right";
             }
         }
-        else if (direction == "forward" && Physics.Raycast(transform.position, Vector3.forward, 0.8f))
+        else if (direction == "forward" && Physics.Raycast(transform.position, Vector3.forward, 1.5f))
         {
             if (Random.Range(0, 2) == 0)
             {
@@ -114,7 +165,7 @@ public class ThievesEnemy : MonoBehaviour
                 direction = "right";
             }
         }
-        else if (direction == "left" && Physics.Raycast(transform.position, Vector3.left, 0.8f))
+        else if (direction == "left" && Physics.Raycast(transform.position, Vector3.left, 1.5f))
         {
             if (Random.Range(0, 2) == 0)
             {
@@ -125,7 +176,7 @@ public class ThievesEnemy : MonoBehaviour
                 direction = "back";
             }
         }
-        else if (direction == "right" && Physics.Raycast(transform.position, Vector3.right, 0.8f))
+        else if (direction == "right" && Physics.Raycast(transform.position, Vector3.right, 1.5f))
         {
             if (Random.Range(0, 2) == 0)
             {
