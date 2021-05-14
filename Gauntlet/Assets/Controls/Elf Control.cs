@@ -59,14 +59,56 @@ public class @ElfControl : IInputActionCollection, IDisposable
                     ""isPartOfComposite"": false
                 }
             ]
+        },
+        {
+            ""name"": ""New action map"",
+            ""id"": ""d0993eb9-8173-481d-a6ba-6c8986f058de"",
+            ""actions"": [
+                {
+                    ""name"": ""mouse"",
+                    ""type"": ""Button"",
+                    ""id"": ""d478edec-5672-4244-9584-85c777986368"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                }
+            ],
+            ""bindings"": [
+                {
+                    ""name"": """",
+                    ""id"": ""e53168ff-df48-49fa-acfd-b967bb967d2d"",
+                    ""path"": ""<Mouse>/leftButton"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""New control scheme"",
+                    ""action"": ""mouse"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                }
+            ]
         }
     ],
-    ""controlSchemes"": []
+    ""controlSchemes"": [
+        {
+            ""name"": ""New control scheme"",
+            ""bindingGroup"": ""New control scheme"",
+            ""devices"": [
+                {
+                    ""devicePath"": ""<Mouse>"",
+                    ""isOptional"": false,
+                    ""isOR"": false
+                }
+            ]
+        }
+    ]
 }");
         // Game Controls
         m_GameControls = asset.FindActionMap("Game Controls", throwIfNotFound: true);
         m_GameControls_Moventment = m_GameControls.FindAction("Moventment", throwIfNotFound: true);
         m_GameControls_Shoot = m_GameControls.FindAction("Shoot", throwIfNotFound: true);
+        // New action map
+        m_Newactionmap = asset.FindActionMap("New action map", throwIfNotFound: true);
+        m_Newactionmap_mouse = m_Newactionmap.FindAction("mouse", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -153,9 +195,55 @@ public class @ElfControl : IInputActionCollection, IDisposable
         }
     }
     public GameControlsActions @GameControls => new GameControlsActions(this);
+
+    // New action map
+    private readonly InputActionMap m_Newactionmap;
+    private INewactionmapActions m_NewactionmapActionsCallbackInterface;
+    private readonly InputAction m_Newactionmap_mouse;
+    public struct NewactionmapActions
+    {
+        private @ElfControl m_Wrapper;
+        public NewactionmapActions(@ElfControl wrapper) { m_Wrapper = wrapper; }
+        public InputAction @mouse => m_Wrapper.m_Newactionmap_mouse;
+        public InputActionMap Get() { return m_Wrapper.m_Newactionmap; }
+        public void Enable() { Get().Enable(); }
+        public void Disable() { Get().Disable(); }
+        public bool enabled => Get().enabled;
+        public static implicit operator InputActionMap(NewactionmapActions set) { return set.Get(); }
+        public void SetCallbacks(INewactionmapActions instance)
+        {
+            if (m_Wrapper.m_NewactionmapActionsCallbackInterface != null)
+            {
+                @mouse.started -= m_Wrapper.m_NewactionmapActionsCallbackInterface.OnMouse;
+                @mouse.performed -= m_Wrapper.m_NewactionmapActionsCallbackInterface.OnMouse;
+                @mouse.canceled -= m_Wrapper.m_NewactionmapActionsCallbackInterface.OnMouse;
+            }
+            m_Wrapper.m_NewactionmapActionsCallbackInterface = instance;
+            if (instance != null)
+            {
+                @mouse.started += instance.OnMouse;
+                @mouse.performed += instance.OnMouse;
+                @mouse.canceled += instance.OnMouse;
+            }
+        }
+    }
+    public NewactionmapActions @Newactionmap => new NewactionmapActions(this);
+    private int m_NewcontrolschemeSchemeIndex = -1;
+    public InputControlScheme NewcontrolschemeScheme
+    {
+        get
+        {
+            if (m_NewcontrolschemeSchemeIndex == -1) m_NewcontrolschemeSchemeIndex = asset.FindControlSchemeIndex("New control scheme");
+            return asset.controlSchemes[m_NewcontrolschemeSchemeIndex];
+        }
+    }
     public interface IGameControlsActions
     {
         void OnMoventment(InputAction.CallbackContext context);
         void OnShoot(InputAction.CallbackContext context);
+    }
+    public interface INewactionmapActions
+    {
+        void OnMouse(InputAction.CallbackContext context);
     }
 }
