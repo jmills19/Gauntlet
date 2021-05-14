@@ -6,7 +6,7 @@ public class SorcererEnemy : MonoBehaviour
 {
     public bool invisible;
     public int speed = 5;
-    public int Hp = 5;
+    public int Hp = 3;
 
     public GameObject player1;
     public GameObject player2;
@@ -50,11 +50,17 @@ public class SorcererEnemy : MonoBehaviour
 
     private void OnCollisionEnter(Collision other)
     {
-        if (other.gameObject.tag == "Player")
+        if (other.gameObject.tag == "Player"&&invisible==false)
         {
             //Player's health--;
         }
+        if (other.gameObject.tag == "Bullet" && invisible == false)
+        {
+            Hp -= 2;
+        }
     }
+
+
     public void flashing()
     {
         Renderer[] renderers = GetComponentsInChildren<Renderer>();

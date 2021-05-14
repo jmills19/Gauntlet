@@ -20,7 +20,7 @@ public class UI : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        healthText.text = cc.constantHealthDrain.ToString("0");
+       healthText.text = cc.constantHealthDrain.ToString("0");
     }
 
     public void PlayGame()

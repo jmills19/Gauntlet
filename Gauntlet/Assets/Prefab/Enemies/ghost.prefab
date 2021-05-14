@@ -476,7 +476,7 @@ GameObject:
   - component: {fileID: 5250564726727281070}
   m_Layer: 0
   m_Name: ghost
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -530,7 +530,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 5
   Hp: 5
-  player1: {fileID: 5507523986014794135, guid: b9cb43e799973774694eac0303dd958e, type: 3}
+  player1: {fileID: 0}
   player2: {fileID: 0}
   player3: {fileID: 0}
   player4: {fileID: 0}

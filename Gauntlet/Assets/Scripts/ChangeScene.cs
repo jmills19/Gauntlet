@@ -5,25 +5,27 @@ using UnityEngine.SceneManagement;
 
 public class ChangeScene : MonoBehaviour
 {
-    // Start is called before the first frame update
+    public GameObject player1;
+    public GameObject player2;
+    public GameObject player3;
+    public GameObject player4;
+    public GameObject mainCamera;
+    public static ChangeScene instance;
+    public GameObject canvas;
     void Start()
     {
-        
+        instance = this;
+        DontDestroyOnLoad(player1);
+        DontDestroyOnLoad(player2);
+        DontDestroyOnLoad(player3);
+        DontDestroyOnLoad(player4);
+        DontDestroyOnLoad(mainCamera);
+        DontDestroyOnLoad(this.gameObject);
+        DontDestroyOnLoad(canvas);
     }
 
-    // Update is called once per frame
-    void Update()
+    public void switchScene(int sceneNumber)
     {
-        
-    }
-
-    void OnCollisionEnter(Collision other)
-    {
-        Debug.Log("Exit has been touched!");
-
-        if (other.gameObject.name == "exit")
-            {
-            SceneManager.LoadScene(1);
-            }
+        SceneManager.LoadScene(sceneNumber);
     }
 }

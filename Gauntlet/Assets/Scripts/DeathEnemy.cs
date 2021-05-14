@@ -5,7 +5,7 @@ using UnityEngine;
 public class DeathEnemy : MonoBehaviour
 {
     public int speed = 5;
-    public int totalDamage=0;
+    static public int totalDamage=0;
 
     public GameObject player1;
     public GameObject player2;
@@ -33,7 +33,7 @@ public class DeathEnemy : MonoBehaviour
         player4 = GameObject.Find("Valkyrie");
         moveToPlayer();
 
-        if (totalDamage >=200)
+        if (totalDamage >=100)
         {
             Destroy(this.gameObject);
         }
@@ -45,6 +45,7 @@ public class DeathEnemy : MonoBehaviour
         if (other.gameObject.tag == "Player")
         {
             totalDamage+=1;
+
             //Player's health= player's health-totalDamage;
         }
     }
