@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2945644409302338287}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: Pos
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -136,12 +136,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ead97f16c96d494abdded80f7d30641, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  projectilePrefab: {fileID: 1884368360017941476, guid: 8028df63d6c9fe64a8c41b857b7d8174,
-    type: 3}
+  projectilePrefab: {fileID: 0}
   Hp: 5
   startSpawn: 0
   howfar: 30
-  Pos: {fileID: 2945644409302338287}
+  spawnPos: {fileID: 2945644409302338287}
   player1: {fileID: 0}
   player2: {fileID: 0}
   player3: {fileID: 0}
