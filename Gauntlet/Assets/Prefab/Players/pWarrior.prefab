@@ -105,6 +105,7 @@ GameObject:
   - component: {fileID: 5507523986014794121}
   - component: {fileID: -6206778702443843123}
   - component: {fileID: 5507523986014794125}
+  - component: {fileID: -1357475628563005941}
   m_Layer: 0
   m_Name: pWarrior
   m_TagString: Player
@@ -278,3 +279,19 @@ MonoBehaviour:
   m_DefaultActionMap: Game Controls
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
+--- !u!54 &-1357475628563005941
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5507523986014794135}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0

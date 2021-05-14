@@ -140,7 +140,7 @@ MonoBehaviour:
   Hp: 5
   startSpawn: 0
   howfar: 30
-  spawnPos: {fileID: 2945644409302338287}
+  Pos: {fileID: 2945644409302338287}
   player1: {fileID: 0}
   player2: {fileID: 0}
   player3: {fileID: 0}

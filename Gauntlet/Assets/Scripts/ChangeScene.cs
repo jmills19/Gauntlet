@@ -17,9 +17,13 @@ public class ChangeScene : MonoBehaviour
         
     }
 
-    void OnCollisionEnter(Collider other)
+    void OnCollisionEnter(Collision other)
     {
-        if (other.gameObject.tag == "Player")
-            SceneManager.LoadScene("level 2");
+        Debug.Log("Exit has been touched!");
+
+        if (other.gameObject.name == "exit")
+            {
+            SceneManager.LoadScene(1);
+            }
     }
 }
