@@ -19,6 +19,11 @@ public class Warrior : MonoBehaviour
     enum pAttackType { melee, missile };
     public float pAttackRange;
 
+    private void Awake()
+    {
+        //controls.Player.Shoot.performed += ctx => Shoot();
+    }
+
     // Start is called before the first frame update
     void Start()
     {
@@ -44,6 +49,12 @@ public class Warrior : MonoBehaviour
 
     public void OnMove(InputAction.CallbackContext ctx)
     {
+        Debug.Log("Player Moving!");
         movementInput = ctx.ReadValue<Vector2>();
+    }
+
+    public void Shoot()
+    {
+        Debug.Log("Player Shot!");
     }
 }
