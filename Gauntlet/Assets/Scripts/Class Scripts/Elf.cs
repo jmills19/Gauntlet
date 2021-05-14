@@ -6,11 +6,17 @@ using UnityEngine.InputSystem;
 
 public class Elf : MonoBehaviour
 {
-    public Transform Pos;
+    public Transform ForwardPos;
+    public Transform backPos;
+    public Transform leftPos;
+    public Transform RightPos;
     public GameObject bullet;
     public TMP_Text healthText;
     public float pAttackRange;
     public int bulletSpeed;
+
+    public int key;
+    public int treasure;
 
     public static bool isForward;
     public static bool isBackward;
@@ -20,11 +26,13 @@ public class Elf : MonoBehaviour
     private Vector3 moveDirection = Vector3.zero;
     //public static float xMove, zMove;
     // "Timer" Creates a time limit for the player
-    public float constantHealthDrain = 100f;
+    public float constantHealthDrain = 200f;
 
     public PlayerInput playerInput;
     public bool shooting = true;
     public Vector3 rawInputMovement;
+
+
 
     // Base character stats
 
@@ -47,6 +55,8 @@ public class Elf : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
+
         transform.Translate(new Vector3(rawInputMovement.x, 0, rawInputMovement.z) * pSpeed * Time.deltaTime);
       
         if(rawInputMovement.x>0.5&&rawInputMovement.z<0.5&&rawInputMovement.z>-0.5)
@@ -82,14 +92,16 @@ public class Elf : MonoBehaviour
             isRight = false;
         }
 
-        healthText.text = "Elf Health: " + constantHealthDrain.ToString("f0");
+       
 
         if (constantHealthDrain <= 0)
         {
+            healthText.text = "You Die!";
             Destroy(gameObject);
         }
         else
         {
+            healthText.text = "Elf Health: " + constantHealthDrain.ToString("f0");
             constantHealthDrain -= Time.deltaTime;
         }
     }
@@ -107,13 +119,48 @@ public class Elf : MonoBehaviour
         {
             if (shooting == true)
             {
-                GameObject projectile = Instantiate(bullet, Pos.transform.position, this.transform.rotation);
-                projectile.GetComponent<bullet>().goingBack = isBackward;
-                projectile.GetComponent<bullet>().goingForward = isForward;
-                projectile.GetComponent<bullet>().goingLeft = isLeft;
-                projectile.GetComponent<bullet>().goingRight = isRight;
-                projectile.GetComponent<bullet>().Initialize(pAttackRange,bulletSpeed);
-               
+                if (isForward == true && isBackward == false && isLeft == false && isRight == false)
+                {
+
+                    GameObject projectile = Instantiate(bullet, ForwardPos.transform.position, this.transform.rotation);
+                    projectile.GetComponent<bullet>().goingBack = isBackward;
+                    projectile.GetComponent<bullet>().goingForward = isForward;
+                    projectile.GetComponent<bullet>().goingLeft = isLeft;
+                    projectile.GetComponent<bullet>().goingRight = isRight;
+                    projectile.GetComponent<bullet>().Initialize(pAttackRange, bulletSpeed);
+
+                }
+                else if (isBackward == true && isForward == false && isLeft == false && isRight == false)
+                {
+                    GameObject projectile = Instantiate(bullet, backPos.transform.position, this.transform.rotation);
+                    projectile.GetComponent<bullet>().goingBack = isBackward;
+                    projectile.GetComponent<bullet>().goingForward = isForward;
+                    projectile.GetComponent<bullet>().goingLeft = isLeft;
+                    projectile.GetComponent<bullet>().goingRight = isRight;
+                    projectile.GetComponent<bullet>().Initialize(pAttackRange, bulletSpeed);
+
+                }
+                else if (isLeft == true && isBackward == false && isForward == false && isRight == false)
+                {
+                    GameObject projectile = Instantiate(bullet, leftPos.transform.position, this.transform.rotation);
+                    projectile.GetComponent<bullet>().goingBack = isBackward;
+                    projectile.GetComponent<bullet>().goingForward = isForward;
+                    projectile.GetComponent<bullet>().goingLeft = isLeft;
+                    projectile.GetComponent<bullet>().goingRight = isRight;
+                    projectile.GetComponent<bullet>().Initialize(pAttackRange, bulletSpeed);
+
+                }
+                else if (isRight == true && isBackward == false && isLeft == false && isForward == false)
+                {
+                    GameObject projectile = Instantiate(bullet, RightPos.transform.position, this.transform.rotation);
+                    projectile.GetComponent<bullet>().goingBack = isBackward;
+                    projectile.GetComponent<bullet>().goingForward = isForward;
+                    projectile.GetComponent<bullet>().goingLeft = isLeft;
+                    projectile.GetComponent<bullet>().goingRight = isRight;
+                    projectile.GetComponent<bullet>().Initialize(pAttackRange, bulletSpeed);
+
+                }
+
                 shooting = false;
                 StartCoroutine(shoot());
 
@@ -122,6 +169,42 @@ public class Elf : MonoBehaviour
         }
     }
 
+    private void OnCollisionEnter(Collision other)
+    {
+        if (other.gameObject.tag == "Death")
+        {
+            constantHealthDrain -= DeathEnemy.totalDamage;
+        }
+        if(other.gameObject.tag=="Enemy")
+        {
+            constantHealthDrain--;
+        }
+        if(other.gameObject.tag=="door")
+        {
+            if(key>0)
+            {
+                key--;
+                Destroy(other.gameObject);
+            }
+        }
+    }
+    private void OnTriggerEnter(Collider other)
+    {
+        if(other.gameObject.tag=="Rock")
+        {
+            constantHealthDrain--;
+        }
+        if(other.gameObject.tag=="key")
+        {
+            key++;
+            Destroy(other.gameObject);
+        }
+        if(other.gameObject.tag=="treasure")
+        {
+            treasure += 50;
+            Destroy(other.gameObject);
+        }
+    }
 
     IEnumerator shoot()
     {

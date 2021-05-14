@@ -47,7 +47,13 @@ public class GruntEnemy : MonoBehaviour
         {
             //Player's health--;
         }
+        if (other.gameObject.tag == "Bullet")
+        {
+            Hp -= 2;
+        }
     }
+
+
     void moveToPlayer()
     {
         if (player1 != null)

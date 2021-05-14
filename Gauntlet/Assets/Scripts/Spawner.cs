@@ -5,7 +5,7 @@ using UnityEngine;
 public class Spawner : MonoBehaviour
 {
     public GameObject projectilePrefab;
-    public int Hp;
+    public int Hp=3;
     public bool startSpawn;
     public float howfar;
     public Transform Pos;
@@ -26,10 +26,15 @@ public class Spawner : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        
         InvokeRepeating("SpawnEnemy", startDelay, timeBetweenShots);
     }
-    private void Update()
+    void Update()
     {
+        if (Hp <= 0)
+        {
+            Destroy(this.gameObject);
+        }
         player1 = GameObject.Find("Elf");
         player2 = GameObject.Find("Warrior");
         player3 = GameObject.Find("Wizard");
@@ -154,24 +159,21 @@ public class Spawner : MonoBehaviour
        
     }
 
+    private void OnCollisionEnter(Collision other)
+    {
+        if (other.gameObject.tag == "Bullet")
+        {
+            Hp--;
 
+        }
+
+    }
     public void SpawnEnemy()
-    //similar spawner that was in the original platformer but it can now spawn enemies
     {
         if (startSpawn == true)
         {
             GameObject projectile = Instantiate(projectilePrefab, Pos.transform.position, projectilePrefab.transform.rotation);
         }
     }
-    private void OnTriggerEnter(Collider other)
-    {
-        if(other.gameObject.tag=="bullet")
-        {
-            Hp--;
-            if(Hp<0)
-            {
-                Destroy(this.gameObject);
-            }
-        }
-    }
+    
 }

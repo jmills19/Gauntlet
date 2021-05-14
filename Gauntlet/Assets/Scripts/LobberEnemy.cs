@@ -61,7 +61,15 @@ public class LobberEnemy : MonoBehaviour
             projectile.GetComponent<Rock>().Initialize(_fireDeathTimer);
         }
     }
-    void moveToPlayer()
+    private void OnCollisionEnter(Collision other)
+    {
+        if (other.gameObject.tag == "Bullet")
+        {
+            Hp -= 2;
+        }
+    }
+
+void moveToPlayer()
     {
         if (player1 != null)
         {

@@ -14,7 +14,7 @@ public class bullet : MonoBehaviour
     public bool goingBack;
 
 
-    public Transform player;
+
     public void Initialize(float pAttackRange, int bulletSpeed)
     {
         _deathTimer = pAttackRange;
@@ -60,7 +60,10 @@ public class bullet : MonoBehaviour
     }
     private void OnCollisionEnter(Collision other)
     {
-        
-        //Destroy(this.gameObject);
+        if (other.gameObject.tag != "Player")
+        {
+
+            Destroy(this.gameObject);
+        }
     }
 }

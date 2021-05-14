@@ -200,4 +200,12 @@ public class DemonEnemy : MonoBehaviour
             transform.rotation = Quaternion.Euler(tempRot);
         }
     }
+    private void OnCollisionEnter(Collision other)
+    {
+        if (other.gameObject.tag == "Bullet")
+        {
+            Hp -= 2;
+        }
+    }
+
 }
