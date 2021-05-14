@@ -29,6 +29,10 @@ public class Spawner : MonoBehaviour
     }
     private void Update()
     {
+        player1 = GameObject.Find("Elf");
+        player2 = GameObject.Find("Warrior");
+        player3 = GameObject.Find("Wizard");
+        player4 = GameObject.Find("Valkyrie");
         if (player1 != null)
         {
             distance1 = Vector3.Distance(player1.transform.position, this.transform.position);

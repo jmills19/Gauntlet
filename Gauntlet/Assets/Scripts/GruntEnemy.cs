@@ -28,6 +28,10 @@ public class GruntEnemy : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        player1 = GameObject.Find("Elf");
+        player2 = GameObject.Find("Warrior");
+        player3 = GameObject.Find("Wizard");
+        player4 = GameObject.Find("Valkyrie");
 
         moveToPlayer();
 

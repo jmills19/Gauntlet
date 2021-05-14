@@ -31,7 +31,11 @@ public class SorcererEnemy : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(invisible==true)
+        player1 = GameObject.Find("Elf");
+        player2 = GameObject.Find("Warrior");
+        player3 = GameObject.Find("Wizard");
+        player4 = GameObject.Find("Valkyrie");
+        if (invisible==true)
         {
             //bullet proof;
         }

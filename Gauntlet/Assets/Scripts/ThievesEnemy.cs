@@ -19,6 +19,7 @@ public class ThievesEnemy : MonoBehaviour
     float distance3;
     float distance4;
 
+    public float _deathTimer;
     Vector3 tempPos;
     Vector3 tempRot;
 
@@ -33,6 +34,10 @@ public class ThievesEnemy : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        player1 = GameObject.Find("Elf");
+        player2 = GameObject.Find("Warrior");
+        player3 = GameObject.Find("Wizard");
+        player4 = GameObject.Find("Valkyrie");
 
         if (run == false)
         {
@@ -148,9 +153,15 @@ public class ThievesEnemy : MonoBehaviour
         {
             //Player's health--;
             run = true;
+            StartCoroutine(Die());
         }
     }
+    IEnumerator Die()
+    {
 
+        yield return new WaitForSeconds(_deathTimer);
+        Destroy(this.gameObject);
+    }
     void runaway()
     {
 
