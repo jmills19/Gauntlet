@@ -123,7 +123,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Actions: {fileID: -944628639613478452, guid: bb848788630e4aa43a94d02920a61cbf,
+  m_Actions: {fileID: -944628639613478452, guid: 29742203161523c43b3775601c62080e,
     type: 3}
   m_NotificationBehavior: 2
   m_UIInputModule: {fileID: 0}
@@ -158,8 +158,8 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: UnityEngine.InputSystem.PlayerInput+ActionEvent, Unity.InputSystem,
       Version=1.0.2.0, Culture=neutral, PublicKeyToken=null
-    m_ActionId: 927f2ee2-0792-448c-9ab0-3d81d9f715ec
-    m_ActionName: Game Controls/Movement[/Keyboard/w,/Keyboard/s,/Keyboard/a,/Keyboard/d]
+    m_ActionId: 4a841863-41e0-4ac7-bd25-1e5c1fc4ab87
+    m_ActionName: Game Controls/Movement[/Keyboard/i,/Keyboard/k,/Keyboard/j,/Keyboard/l]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Game Controls
