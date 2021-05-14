@@ -8,6 +8,7 @@ using UnityEngine.InputSystem.Utilities;
 public class Warrior : MonoBehaviour
 {
     public TMP_Text healthText;
+    public TMP_Text scoreText;
 
     [SerializeField]
     //private WarriorControls _controls;
@@ -22,6 +23,7 @@ public class Warrior : MonoBehaviour
     private Rigidbody projectilePrefab;
     [SerializeField]
     private float launchForce = 700f;
+    public int score = 0;
 
     // Base character stats
     public int pDamage;
@@ -39,6 +41,7 @@ public class Warrior : MonoBehaviour
     void Start()
     {
         healthText = GameObject.Find("warriorHealthText").GetComponent<TMP_Text>();
+        scoreText = GameObject.Find("Score").GetComponent<TMP_Text>();
     }
 
     // Update is called once per frame
@@ -47,6 +50,7 @@ public class Warrior : MonoBehaviour
         transform.Translate(new Vector3(movementInput.x, 0, movementInput.y) * pSpeed * Time.deltaTime);
 
         healthText.text = "Warrior Health: " + constantHealthDrain.ToString("f0");
+        scoreText.text = "Score: " + score.ToString();
 
         if (constantHealthDrain <= 0)
         {
@@ -70,5 +74,14 @@ public class Warrior : MonoBehaviour
         var projectileInstance = Instantiate(projectilePrefab, firePoint.position, firePoint.rotation);
 
         projectileInstance.AddForce(firePoint.forward * launchForce);
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if(collision.gameObject.tag == "Treausre")
+        {
+            score = score + 10;
+            Destroy(collision.gameObject);
+        }
     }
 }
