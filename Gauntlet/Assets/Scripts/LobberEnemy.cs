@@ -17,6 +17,10 @@ public class LobberEnemy : MonoBehaviour
     public GameObject player3;
     public GameObject player4;
     int which;
+    float distance1;
+    float distance2;
+    float distance3;
+    float distance4;
 
     public GameObject Rock;
     public float _fireDeathTimer;
@@ -35,6 +39,10 @@ public class LobberEnemy : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        player1 = GameObject.Find("Elf");
+        player2 = GameObject.Find("Warrior");
+        player3 = GameObject.Find("Wizard");
+        player4 = GameObject.Find("Valkyrie");
         moveToPlayer();
 
         if (Hp <= 0)
@@ -55,10 +63,38 @@ public class LobberEnemy : MonoBehaviour
     }
     void moveToPlayer()
     {
-        float distance1 = Vector3.Distance(player1.transform.position, this.transform.position);
-        float distance2 = Vector3.Distance(player2.transform.position, this.transform.position);
-        float distance3 = Vector3.Distance(player3.transform.position, this.transform.position);
-        float distance4 = Vector3.Distance(player4.transform.position, this.transform.position);
+        if (player1 != null)
+        {
+            distance1 = Vector3.Distance(player1.transform.position, this.transform.position);
+        }
+        else
+        {
+            distance1 = 99999;
+        }
+        if (player2 != null)
+        {
+            distance2 = Vector3.Distance(player2.transform.position, this.transform.position);
+        }
+        else
+        {
+            distance2 = 99999;
+        }
+        if (player3 != null)
+        {
+            distance3 = Vector3.Distance(player3.transform.position, this.transform.position);
+        }
+        else
+        {
+            distance3 = 99999;
+        }
+        if (player4 != null)
+        {
+            distance4 = Vector3.Distance(player4.transform.position, this.transform.position);
+        }
+        else
+        {
+            distance4 = 99999;
+        }
 
         if (distance1 < distance2 && distance1 < distance3 && distance1 < distance4)
         {

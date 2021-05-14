@@ -672,7 +672,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 5
   Hp: 5
-  player: {fileID: 6382020644527231421, guid: 2b00dbd117bb14842a4a29d650e22507, type: 3}
+  player1: {fileID: 5507523986014794135, guid: b9cb43e799973774694eac0303dd958e, type: 3}
+  player2: {fileID: 0}
+  player3: {fileID: 0}
+  player4: {fileID: 0}
 --- !u!65 &4392285918371268091
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -700,7 +703,7 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 36
+  m_Constraints: 84
   m_CollisionDetection: 0
 --- !u!1 &4392285918401394816
 GameObject:
