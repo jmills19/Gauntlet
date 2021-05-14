@@ -3,6 +3,7 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
+<<<<<<< Updated upstream
   tags:
   - Death
   - Bullet
@@ -13,6 +14,17 @@ TagManager:
   - door
   - Exit
   - win
+=======
+<<<<<<< HEAD
+  tags: []
+=======
+  tags:
+  - treasure
+  - door
+  - Bullet
+  - key
+>>>>>>> _KingOfMyself
+>>>>>>> Stashed changes
   layers:
   - Default
   - TransparentFX
