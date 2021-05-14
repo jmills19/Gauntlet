@@ -13,6 +13,10 @@ public class SorcererEnemy : MonoBehaviour
     public GameObject player3;
     public GameObject player4;
     int which;
+    float distance1;
+    float distance2;
+    float distance3;
+    float distance4;
 
     public float timeBetween;
     public float startDelay;
@@ -69,10 +73,38 @@ public class SorcererEnemy : MonoBehaviour
     }
     void moveToPlayer()
     {
-        float distance1 = Vector3.Distance(player1.transform.position, this.transform.position);
-        float distance2 = Vector3.Distance(player2.transform.position, this.transform.position);
-        float distance3 = Vector3.Distance(player3.transform.position, this.transform.position);
-        float distance4 = Vector3.Distance(player4.transform.position, this.transform.position);
+        if (player1 != null)
+        {
+            distance1 = Vector3.Distance(player1.transform.position, this.transform.position);
+        }
+        else
+        {
+            distance1 = 99999;
+        }
+        if (player2 != null)
+        {
+            distance2 = Vector3.Distance(player2.transform.position, this.transform.position);
+        }
+        else
+        {
+            distance2 = 99999;
+        }
+        if (player3 != null)
+        {
+            distance3 = Vector3.Distance(player3.transform.position, this.transform.position);
+        }
+        else
+        {
+            distance3 = 99999;
+        }
+        if (player4 != null)
+        {
+            distance4 = Vector3.Distance(player4.transform.position, this.transform.position);
+        }
+        else
+        {
+            distance4 = 99999;
+        }
 
         if (distance1 < distance2 && distance1 < distance3 && distance1 < distance4)
         {

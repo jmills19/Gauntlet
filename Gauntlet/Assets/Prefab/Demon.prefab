@@ -391,7 +391,7 @@ MonoBehaviour:
   speed: 5
   Hp: 5
   fireballPos: {fileID: 2528642037334440197}
-  player1: {fileID: 0}
+  player1: {fileID: 5507523986014794135, guid: b9cb43e799973774694eac0303dd958e, type: 3}
   player2: {fileID: 0}
   player3: {fileID: 0}
   player4: {fileID: 0}
