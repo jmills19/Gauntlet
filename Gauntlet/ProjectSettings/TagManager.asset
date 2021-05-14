@@ -4,19 +4,10 @@
 TagManager:
   serializedVersion: 2
   tags:
-<<<<<<< HEAD
-  - Treasure
-=======
-  - Death
-  - Bullet
-  - Enemy
-  - Rock
   - treasure
-  - key
   - door
-  - Exit
-  - win
->>>>>>> John
+  - Bullet
+  - key
   layers:
   - Default
   - TransparentFX
