@@ -4,12 +4,7 @@ using UnityEngine;
 
 public class Shoot : MonoBehaviour
 {
-    [SerializeField]
-    private Transform firePoint;
-    [SerializeField]
-    private Rigidbody projectilePrefab;
-    [SerializeField]
-    private float launchForce = 700f;
+    
 
     // Start is called before the first frame update
     void Start()
@@ -26,11 +21,9 @@ public class Shoot : MonoBehaviour
         }
     }
 
-    private void LaunchProjectile()
+    public void LaunchProjectile()
     {
         
-        var projectileInstance = Instantiate(projectilePrefab, firePoint.position, firePoint.rotation);
-
-        projectileInstance.AddForce(firePoint.forward * launchForce);
+        
     }
 }
