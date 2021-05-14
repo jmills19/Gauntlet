@@ -25,6 +25,7 @@ public class UI : MonoBehaviour
 
     public void PlayGame()
     {
+        Debug.Log("Scene Changed");
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 
