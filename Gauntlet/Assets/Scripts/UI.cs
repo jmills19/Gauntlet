@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 using System;
+using UnityEngine.SceneManagement;
 
 public class UI : MonoBehaviour
 {
@@ -20,5 +21,16 @@ public class UI : MonoBehaviour
     void Update()
     {
         healthText.text = cc.constantHealthDrain.ToString("0");
+    }
+
+    public void PlayGame()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+    }
+
+    public void Quit()
+    {
+        Application.Quit();
+        Debug.Log("Game is closed (Quit Button).");
     }
 }
