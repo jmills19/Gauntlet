@@ -8,6 +8,7 @@ public class Spawner : MonoBehaviour
     public int Hp;
     public bool startSpawn;
     public float howfar;
+    public Transform Pos;
 
     public GameObject player1;
     public GameObject player2;
@@ -73,8 +74,8 @@ public class Spawner : MonoBehaviour
             which = 1;
             if (distance1 < howfar)
             {
-                if (Physics.Raycast(transform.position, Vector3.back, 4f) && Physics.Raycast(transform.position, Vector3.forward, 4f)
-                    && Physics.Raycast(transform.position, Vector3.left, 4f) && Physics.Raycast(transform.position, Vector3.right, 4f))
+                if (Physics.Raycast(transform.position, Vector3.back, 5f) && Physics.Raycast(transform.position, Vector3.forward, 5f)
+                    && Physics.Raycast(transform.position, Vector3.left, 5f) && Physics.Raycast(transform.position, Vector3.right, 5f))
                 {
                     startSpawn = false;
                 }
@@ -93,8 +94,8 @@ public class Spawner : MonoBehaviour
             which = 2;
             if (distance2 < howfar)
             {
-                if (Physics.Raycast(transform.position, Vector3.back, 4f) && Physics.Raycast(transform.position, Vector3.forward, 4f)
-                    && Physics.Raycast(transform.position, Vector3.left, 4f) && Physics.Raycast(transform.position, Vector3.right, 4f))
+                if (Physics.Raycast(transform.position, Vector3.back, 5f) && Physics.Raycast(transform.position, Vector3.forward, 5f)
+                    && Physics.Raycast(transform.position, Vector3.left, 5f) && Physics.Raycast(transform.position, Vector3.right, 5f))
                 {
                     startSpawn = false;
                 }
@@ -113,8 +114,8 @@ public class Spawner : MonoBehaviour
             which = 3;
             if (distance3 < howfar)
             {
-                if (Physics.Raycast(transform.position, Vector3.back, 4f) && Physics.Raycast(transform.position, Vector3.forward, 4f)
-                    && Physics.Raycast(transform.position, Vector3.left, 4f) && Physics.Raycast(transform.position, Vector3.right, 4f))
+                if (Physics.Raycast(transform.position, Vector3.back, 5f) && Physics.Raycast(transform.position, Vector3.forward, 5f)
+                    && Physics.Raycast(transform.position, Vector3.left, 5f) && Physics.Raycast(transform.position, Vector3.right, 5f))
                 {
                     startSpawn = false;
                 }
@@ -133,8 +134,8 @@ public class Spawner : MonoBehaviour
             which = 4;
             if (distance4 < howfar)
             {
-                if (Physics.Raycast(transform.position, Vector3.back, 4f) && Physics.Raycast(transform.position, Vector3.forward, 4f)
-                    && Physics.Raycast(transform.position, Vector3.left, 4f) && Physics.Raycast(transform.position, Vector3.right, 4f))
+                if (Physics.Raycast(transform.position, Vector3.back, 5f) && Physics.Raycast(transform.position, Vector3.forward, 5f)
+                    && Physics.Raycast(transform.position, Vector3.left, 5f) && Physics.Raycast(transform.position, Vector3.right, 5f))
                 {
                     startSpawn = false;
                 }
@@ -159,7 +160,7 @@ public class Spawner : MonoBehaviour
     {
         if (startSpawn == true)
         {
-            GameObject projectile = Instantiate(projectilePrefab, transform.position, projectilePrefab.transform.rotation);
+            GameObject projectile = Instantiate(projectilePrefab, Pos.transform.position, projectilePrefab.transform.rotation);
         }
     }
     private void OnTriggerEnter(Collider other)
