@@ -1,0 +1,52 @@
+{
+    "name": "Elf Controls",
+    "maps": [
+        {
+            "name": "Game Controls",
+            "id": "7e59ff90-b21f-43f8-a8a5-39ebb4ce358d",
+            "actions": [
+                {
+                    "name": "Moventment",
+                    "type": "Value",
+                    "id": "d9ea5206-d40b-4ca2-868f-964ff52ecb5a",
+                    "expectedControlType": "Vector2",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
+                    "name": "Shoot",
+                    "type": "Button",
+                    "id": "23cc3ad9-aa72-4452-827d-01a70bd0e4e0",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "4d279b7d-077c-4d22-b51c-01cdf7b15121",
+                    "path": "<DualShockGamepad>/leftStick",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Moventment",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "c9a38920-b27a-4194-a517-94900d270673",
+                    "path": "<DualShockGamepad>/buttonEast",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Shoot",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}

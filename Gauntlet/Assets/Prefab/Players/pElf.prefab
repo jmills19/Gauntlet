@@ -13,9 +13,9 @@ GameObject:
   - component: {fileID: 7897104136891093850}
   - component: {fileID: 7897104136891093851}
   - component: {fileID: 7897104136891093828}
-  - component: {fileID: 7897104136891093829}
+  - component: {fileID: 298675650937880249}
   m_Layer: 0
-  m_Name: pWizard
+  m_Name: pElf
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -60,7 +60,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 51587d84173c5194497f610889d6433f, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -106,12 +106,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2300e33005b20d84a8cc2bdae276b925, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  healthText: {fileID: 0}
+  playerInput: {fileID: 298675650937880249}
+  rawInputMovement: {x: 0, y: 0, z: 0}
   constantHealthDrain: 100
-  pDamage: 0
   pSpeed: 5
-  pAttackRange: 0
---- !u!114 &7897104136891093829
+--- !u!114 &298675650937880249
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -123,8 +122,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Actions: {fileID: 0}
-  m_NotificationBehavior: 0
+  m_Actions: {fileID: -944628639613478452, guid: 4c8c1dcee59c19446b4200c1bd036b44,
+    type: 3}
+  m_NotificationBehavior: 2
   m_UIInputModule: {fileID: 0}
   m_DeviceLostEvent:
     m_PersistentCalls:
@@ -141,9 +141,43 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.InputSystem.PlayerInput+ControlsChangedEvent, Unity.InputSystem,
       Version=1.0.2.0, Culture=neutral, PublicKeyToken=null
-  m_ActionEvents: []
+  m_ActionEvents:
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 7897104136891093828}
+        m_MethodName: OnMovement
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_TypeName: UnityEngine.InputSystem.PlayerInput+ActionEvent, Unity.InputSystem,
+      Version=1.0.2.0, Culture=neutral, PublicKeyToken=null
+    m_ActionId: d9ea5206-d40b-4ca2-868f-964ff52ecb5a
+    m_ActionName: Game Controls/Moventment[/DualShock4GamepadHID/leftStick,/DualShock4GamepadHID/leftStick]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 7897104136891093828}
+        m_MethodName: OnAttack
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_TypeName: UnityEngine.InputSystem.PlayerInput+ActionEvent, Unity.InputSystem,
+      Version=1.0.2.0, Culture=neutral, PublicKeyToken=null
+    m_ActionId: 23cc3ad9-aa72-4452-827d-01a70bd0e4e0
+    m_ActionName: Game Controls/Shoot[/DualShock4GamepadHID/rightStick/right,/DualShock4GamepadHID/rightStick/right]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
-  m_DefaultActionMap: 
+  m_DefaultActionMap: Game Controls
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
