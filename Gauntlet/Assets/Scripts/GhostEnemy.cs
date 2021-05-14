@@ -5,7 +5,7 @@ using UnityEngine;
 public class GhostEnemy : MonoBehaviour
 {
     public int speed=5;
-    public int Hp = 5;
+    public int Hp = 4;
 
     public GameObject player1;
     public GameObject player2;
@@ -49,7 +49,13 @@ public class GhostEnemy : MonoBehaviour
             Destroy(this.gameObject);
             //Player's health--;
         }
+        if (other.gameObject.tag == "Bullet")
+        {
+            Hp -= 2;
+        }
     }
+
+
 
     void moveToPlayer()
     {

@@ -151,12 +151,17 @@ public class ThievesEnemy : MonoBehaviour
     {
         if (other.gameObject.tag == "Player")
         {
-            //Player's health--;
             run = true;
             StartCoroutine(Die());
         }
+        if (other.gameObject.tag == "Bullet")
+        {
+            Hp -= 2;
+        }
     }
-    IEnumerator Die()
+
+   
+IEnumerator Die()
     {
 
         yield return new WaitForSeconds(_deathTimer);

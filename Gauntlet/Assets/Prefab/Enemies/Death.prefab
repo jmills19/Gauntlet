@@ -245,7 +245,7 @@ GameObject:
   - component: {fileID: 3204283683413658268}
   m_Layer: 0
   m_Name: Death
-  m_TagString: Untagged
+  m_TagString: Death
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -296,7 +296,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 5
-  totalDamage: 0
   player1: {fileID: 0}
   player2: {fileID: 0}
   player3: {fileID: 0}

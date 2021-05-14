@@ -60,7 +60,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 0ec1a06683d2a3c44b181b5deb4cc1c8, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -106,11 +106,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2300e33005b20d84a8cc2bdae276b925, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  healthText: {fileID: 0}
-  constantHealthDrain: 200
-  pDamage: 50
-  pSpeed: 10
-  pAttackRange: 5
+  fireballPos: {fileID: 0}
+  fireball: {fileID: 0}
+  _fireDeathTimer: 0
+  playerInput: {fileID: 0}
+  rawInputMovement: {x: 0, y: 0, z: 0}
+  constantHealthDrain: 100
+  pSpeed: 5
 --- !u!114 &7897104136891093829
 MonoBehaviour:
   m_ObjectHideFlags: 0
