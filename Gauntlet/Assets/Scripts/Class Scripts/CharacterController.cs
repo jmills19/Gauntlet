@@ -23,7 +23,7 @@ public class CharacterController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        healthText = GameObject.Find("healthText").GetComponent<TMP_Text>();
+        healthText = GameObject.Find("warriorHealthText").GetComponent<TMP_Text>();
     }
 
     // Update is called once per frame
@@ -55,7 +55,7 @@ public class CharacterController : MonoBehaviour
 
         transform.Translate(new Vector3(movementInput.x, 0, movementInput.y) * pSpeed * Time.deltaTime);
 
-        healthText.text = "Health: " + constantHealthDrain.ToString("f0");
+        // healthText.text = "Warrior Health: " + constantHealthDrain.ToString("f0");
 
         if(constantHealthDrain <= 0)
         {
