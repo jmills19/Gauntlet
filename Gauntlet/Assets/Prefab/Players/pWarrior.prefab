@@ -199,6 +199,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 190f6dd3e93f1bb42b876a6f9f827ab3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  fireball: {fileID: 6844093650654092981, guid: 2c82eab7c672b3b4a8969464421f3a59,
+    type: 3}
+  _fireDeathTimer: 10
   healthText: {fileID: 0}
   constantHealthDrain: 100
   firePoint: {fileID: 0}

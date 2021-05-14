@@ -6,6 +6,10 @@ using UnityEngine.InputSystem;
 
 public class CharacterController : MonoBehaviour
 {
+
+    public Transform fireballPos;
+    public GameObject fireball;
+    public float _fireDeathTimer;
     //public TMP_Text healthText;
     public PlayerInput playerInput;
     public Vector3 rawInputMovement;
@@ -65,8 +69,12 @@ public class CharacterController : MonoBehaviour
     }
     public void OnAttack(InputAction.CallbackContext value)
     {
+        
+  
         if(value.started)
         {
+            GameObject projectile = Instantiate(fireball, fireballPos.transform.position, this.transform.rotation);
+            projectile.GetComponent<fireBall>().Initialize(_fireDeathTimer);
             Debug.Log("Attack");
         }
     }

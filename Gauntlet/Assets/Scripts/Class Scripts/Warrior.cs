@@ -7,6 +7,7 @@ using UnityEngine.InputSystem.Utilities;
 
 public class Warrior : MonoBehaviour
 {
+ 
     public TMP_Text healthText;
 
     [SerializeField]
@@ -68,7 +69,9 @@ public class Warrior : MonoBehaviour
     {
         Debug.Log("Player Shot!");
         var projectileInstance = Instantiate(projectilePrefab, firePoint.position, firePoint.rotation);
-
         projectileInstance.AddForce(firePoint.forward * launchForce);
+
+    
     }
+
 }
