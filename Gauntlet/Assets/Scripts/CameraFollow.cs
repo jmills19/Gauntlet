@@ -18,7 +18,7 @@ public class CameraFollow : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-       targetPlayer = GameObject.Find("Elf");
+       //targetPlayer = GameObject.Find("Elf");
         //targetPlayer = GameObject.FindGameObjectWithTag("Player");
         transform.position = targetPlayer.transform.position + mydif;
     }

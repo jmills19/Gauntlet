@@ -12,6 +12,7 @@ public class Elf : MonoBehaviour
     public Transform RightPos;
     public GameObject bullet;
     public TMP_Text healthText;
+    public TMP_Text Score;
     public float pAttackRange;
     public int bulletSpeed;
 
@@ -50,6 +51,7 @@ public class Elf : MonoBehaviour
     {
         shooting = true;
         healthText = GameObject.Find("elfHealthText").GetComponent<TMP_Text>();
+        Score = GameObject.Find("elfScore").GetComponent<TMP_Text>();
     }
 
     // Update is called once per frame
@@ -92,7 +94,7 @@ public class Elf : MonoBehaviour
             isRight = false;
         }
 
-       
+        Score.text = "Score: " + treasure.ToString("f0");
 
         if (constantHealthDrain <= 0)
         {
@@ -203,6 +205,14 @@ public class Elf : MonoBehaviour
         {
             treasure += 50;
             Destroy(other.gameObject);
+        }
+        if(other.gameObject.tag=="Exit")
+        {
+            ChangeScene.instance.switchScene(2);
+        }
+        if (other.gameObject.tag == "win")
+        {
+            ChangeScene.instance.switchScene(3);
         }
     }
 

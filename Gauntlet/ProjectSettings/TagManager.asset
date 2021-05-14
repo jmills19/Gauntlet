@@ -11,6 +11,8 @@ TagManager:
   - treasure
   - key
   - door
+  - Exit
+  - win
   layers:
   - Default
   - TransparentFX

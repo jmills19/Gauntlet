@@ -531,7 +531,9 @@ MonoBehaviour:
   healthText: {fileID: 0}
   pAttackRange: 5
   bulletSpeed: 20
-  constantHealthDrain: 100
+  key: 0
+  treasure: 0
+  constantHealthDrain: 200
   playerInput: {fileID: 298675650937880249}
   shooting: 0
   rawInputMovement: {x: 0, y: 0, z: 0}

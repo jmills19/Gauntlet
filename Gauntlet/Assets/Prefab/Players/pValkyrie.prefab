@@ -106,11 +106,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2300e33005b20d84a8cc2bdae276b925, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  healthText: {fileID: 0}
+  fireballPos: {fileID: 0}
+  fireball: {fileID: 0}
+  _fireDeathTimer: 0
+  playerInput: {fileID: 0}
+  rawInputMovement: {x: 0, y: 0, z: 0}
   constantHealthDrain: 100
-  pDamage: 0
   pSpeed: 5
-  pAttackRange: 0
 --- !u!114 &7897104136891093829
 MonoBehaviour:
   m_ObjectHideFlags: 0
