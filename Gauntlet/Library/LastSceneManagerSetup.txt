@@ -1,13 +1,5 @@
 sceneSetups:
-<<<<<<< HEAD
 - path: Assets/Scenes/Menu.unity
-=======
-<<<<<<< HEAD
-- path: Assets/Scenes/level 1.unity
-=======
-- path: Assets/Samples/Input System/1.0.2/On-Screen Controls/OnScreenControlsSample.unity
->>>>>>> _KingOfMyself
->>>>>>> main
   isLoaded: 1
   isActive: 1
   isSubScene: 0
